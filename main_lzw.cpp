@@ -40,7 +40,35 @@ lzw kompres(const std::string &nokompres, lzw result) {
     *result++ = kamus[w];
   return result;
 }
+//dekompresi
+template <typename lzw>
+std::string decompress(lzw begin, lzw end) {
+	// membuat kamus dengan ukuran 256
+  int ukuran = 256;
+  std::map<int,std::string> kamus;
+  for (int i = 0; i < 256; i++)
+    kamus[i] = std::string(1, i);
 
+  std::string w(1, *begin++);
+  std::string result = w;
+  std::string entry;
+  for ( ; begin != end; begin++) {
+    int k = *begin;
+    if (kamus.count(k))
+      entry = kamus[k];
+    else if (k == ukuran)
+      entry = w + w[0];
+    else
+      throw "Dekompresi gagal";
+
+    result += entry;
+
+    kamus[ukuran++] = w + entry[0];
+
+    w = entry;
+  }
+  return result;
+}
 int main() {
 return 0;
 }
