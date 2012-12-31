@@ -42,5 +42,5 @@ lzw kompres(const std::string &nokompres, lzw result) {
 }
 
 int main() {
-
+return 0;
 }
