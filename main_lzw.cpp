@@ -70,5 +70,23 @@ std::string decompress(lzw begin, lzw end) {
   return result;
 }
 int main() {
+	
+    //std::ifstream myfile("example.txt");
+    //std::string data;
+    
+   //while(! myfile.eof()) {
+            //getline(myfile, data);
+            //td::cout << data << "\n\n";
+    //}
+    
+    //std::cin.get();
+    
+  std::vector<int> kompresi;
+  kompres("Kompresi Text dengan Algoritma Lempel-Ziv-Welch", std::back_inserter(kompresi));
+  copy(kompresi.begin(), kompresi.end(), std::ostream_iterator<int>(std::cout, ", "));
+  std::cout << std::endl;
+  std::string dekompresi = decompress(kompresi.begin(), kompresi.end());
+  std::cout << dekompresi << std::endl;
+
 return 0;
 }
