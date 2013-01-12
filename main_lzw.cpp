@@ -102,7 +102,7 @@ int main() {
     //std::cin.get();
     
   std::vector<int> kompresi;
-  kompres("Kompresi Text dengan Algoritma Lempel-Ziv-Welch", std::back_inserter(kompresi));
+  kompres("Kompresi Text dengan Algoritma Lempel-Ziv-Welch, Tugas Besar Sistem Multimedia", std::back_inserter(kompresi));
   copy(kompresi.begin(), kompresi.end(), std::ostream_iterator<int>(std::cout, ", "));
   std::cout << std::endl;
   std::string dekompresi = decompress(kompresi.begin(), kompresi.end());
