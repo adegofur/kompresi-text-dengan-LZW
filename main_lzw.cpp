@@ -69,6 +69,26 @@ std::string decompress(lzw begin, lzw end) {
   }
   return result;
 }
+//coba kompresi file
+  //compress(input_file,lzw_file);
+  //fclose(input_file);
+  //fclose(lzw_file);
+  //free(code_value);
+//membuka file
+  //lzw_file=fopen("test_awal.lzw","rb");
+  //output_file=fopen("test_awal.out","wb");
+  //if (lzw_file==NULL || output_file==NULL)
+  //{
+    //cout<<"Fatal error opening files";
+    //exit(-2);
+  //};
+//tampilkan file
+  //expand(lzw_file,output_file);
+  //fclose(lzw_file);
+  //fclose(output_file);
+  //free(prefix_code);
+  //free(append_character);
+//}
 int main() {
 	
     //std::ifstream myfile("example.txt");
